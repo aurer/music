@@ -1,0 +1,21 @@
+{
+	"name": "music",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "Aurer",
+	"license": "MIT",
+	"private": false,
+	"scripts": {
+		"start": "gulp"
+	},
+	"dependencies": {
+		"@babel/core": "^7.4.0",
+		"@babel/plugin-transform-react-jsx": "^7.3.0",
+		"browser-sync": "^2.26.3",
+		"gulp": "^4.0.0",
+		"gulp-babel": "^8.0.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-sass": "^4.0.2",
+		"preact": "^8.4.2"
+	}
+}

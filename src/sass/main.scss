@@ -1,0 +1,28 @@
+.Tracks {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 1px;
+
+	.Track {
+		box-shadow: 0 0 0 1px #ccc;
+		padding: 1rem;
+	}
+
+	.Track--placeholder {
+		.Track-name,
+		.Track-artist {
+			background-color: #eee;
+			height: 1em;
+		}
+
+		.Track-name {
+			font-size: 1.5em;
+			margin: 1em 0;
+			height: 2em;
+		}
+
+		.Track-artist {
+			width: 80%;
+		}
+	}
+}
