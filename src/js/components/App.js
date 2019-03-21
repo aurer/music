@@ -12,7 +12,7 @@ class App extends Component {
 			total: 0,
 			perPage: 10,
 			totalPages: 0,
-			tracks: []
+			tracks: Array.apply({}, Array(10))
 		};
 	}
 
