@@ -10,9 +10,9 @@ class App extends Component {
 		this.state = {
 			page: 1,
 			total: 0,
-			perPage: 10,
+			perPage: 30,
 			totalPages: 0,
-			tracks: Array.apply({}, Array(10))
+			tracks: Array.apply({}, Array(30))
 		};
 	}
 
@@ -48,7 +48,6 @@ class App extends Component {
 			<div class="App">
 				<Tracks tracks={tracks.slice(0, this.state.perPage)} page={page} />
 				<Paging page={page} totalPages={totalPages} onPage={this.handlePaging.bind(this)} />
-				<button onClick={this.handlePaging.bind(this, this.state.page)}>Refresh</button>
 			</div>
 		);
 	}

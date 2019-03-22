@@ -18,10 +18,13 @@ class Track extends Component {
 	render(props) {
 		let track = this.remapTrack(props.track);
 		return (
-			<div class="Track">
-				<img src={track.image} />
-				<h2 class="Track-name">{track.name}</h2>
-				<div class="Track-artist">{track.artist}</div>
+			<div class="Track-container">
+				<div class="Track">
+					<div class="Track-image" />
+					{/* <img class="Track-image" src={track.image} /> */}
+					<h2 class="Track-name">{track.name}</h2>
+					<div class="Track-artist">{track.artist}</div>
+				</div>
 			</div>
 		);
 	}

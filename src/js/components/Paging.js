@@ -13,6 +13,12 @@ class Paging extends Component {
 		}
 	}
 
+	handleRefresh() {
+		if (this.hasNext()) {
+			this.props.onPage(this.props.page);
+		}
+	}
+
 	hasPrev() {
 		return this.props.page > 1;
 	}
@@ -27,8 +33,13 @@ class Paging extends Component {
 				<div class="Paging-info">
 					Page {page} of {totalPages}
 				</div>
-				{this.hasPrev() && <button onClick={this.handlePrev.bind(this)}>prev</button>}
-				{this.hasNext() && <button onClick={this.handleNext.bind(this)}>next</button>}
+				<p>
+					{this.hasPrev() && <button onClick={this.handlePrev.bind(this)}>prev</button>}
+					{this.hasNext() && <button onClick={this.handleNext.bind(this)}>next</button>}
+				</p>
+				<p>
+					<button onClick={this.handleRefresh.bind(this)}>Refresh</button>
+				</p>
 			</div>
 		);
 	}
