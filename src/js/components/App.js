@@ -10,7 +10,7 @@ class App extends Component {
 		this.state = {
 			page: 1,
 			total: 0,
-			perPage: 30,
+			perPage: 10,
 			totalPages: 0,
 			tracks: Array.apply({}, Array(30))
 		};

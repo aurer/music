@@ -1,0 +1,26 @@
+ul,
+ol,
+dl {
+	margin-top: 0;
+	margin-bottom: $space;
+}
+
+ul,
+ol {
+	padding-left: $space;
+
+	ul,
+	ol {
+		margin-bottom: 0;
+	}
+}
+
+ol {
+	ol {
+		list-style: lower-alpha;
+
+		ol {
+			list-style: lower-roman;
+		}
+	}
+}

@@ -1,0 +1,51 @@
+// Base settings
+$base-font-size: 1rem;
+
+// Font families
+$font-primary: sans-serif;
+$font-secondary: sans-serif;
+
+// Breakpoints
+$widths: (
+	sm: 20em,
+	md: 36em,
+	lg: 52em,
+	xl: 68em
+);
+
+// Spacing
+$space: $base-font-size * 1.5;
+$space-xs: $space / 3;
+$space-sm: $space / 2;
+$space-md: $space * 1.5;
+$space-lg: $space * 2;
+$space-xl: $space * 3;
+
+// Grid
+$grid-columns: 8;
+$grid-font-size: 1rem;
+$grid-space: 1rem;
+
+// Primary colors
+$color-neutral-lighter: hsl(210, 17%, 35%);
+$color-neutral-light: hsl(210, 16%, 24%);
+$color-neutral: hsl(210, 15%, 18%);
+$color-neutral-dark: hsl(210, 17%, 12%);
+$color-neutral-darker: hsl(210, 18%, 9%);
+
+/* Primary colors */
+$color-primary-lighter: hsl(170, 42%, 54%);
+$color-primary-light: hsl(170, 58%, 42%);
+$color-primary: hsl(170, 100%, 30%);
+$color-primary-dark: hsl(170, 100%, 25%);
+$color-primary-darker: hsl(170, 100%, 20%);
+
+// Contrast colors
+$color-white: hsl(210, 10%, 90%);
+$color-black: hsl(210, 10%, 10%);
+
+// Message colors
+$color-message-info: #00a8f7;
+$color-message-success: #47b04a;
+$color-message-warning: #f5a800;
+$color-message-error: #f6412d;

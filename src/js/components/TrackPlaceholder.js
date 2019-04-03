@@ -5,9 +5,11 @@ class Track extends Component {
 		return (
 			<div class="Track-container">
 				<div class="Track Track--placeholder">
-					{/* <div class="Track-image" /> */}
-					<div class="Track-name" />
-					<div class="Track-artist" />
+					<div class="Track-image" />
+					<div class="Track-info">
+						<h2 class="Track-name" />
+						<div class="Track-artist" />
+					</div>
 				</div>
 			</div>
 		);

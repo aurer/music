@@ -1,63 +1,12 @@
-html,
-body {
-	font-family: sans-serif;
-	margin: 0;
-	padding: 0;
-}
+// config
+@import 'config';
 
-* {
-	box-sizing: border-box;
-}
+// Utility
+@import 'utility/utility';
 
-.Tracks {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	grid-gap: 1px;
+// Defaults
+@import 'default/default';
 
-	.Track-container {
-		box-shadow: 0 0 0 1px #ccc;
-	}
+// Components
+@import 'components/components';
 
-	.Track {
-		padding: 1rem;
-		text-align: center;
-		max-width: 300px;
-		margin: auto;
-
-		&-image {
-			background-color: #eee;
-		}
-	}
-
-	.Track--placeholder {
-		.Track-image,
-		.Track-name,
-		.Track-artist {
-			background-color: #eee;
-			height: 1em;
-		}
-
-		.Track-image {
-			display: inline-block;
-			width: 100%;
-			max-width: 300px;
-			height: 0;
-			padding-top: 100%;
-		}
-
-		.Track-name {
-			font-size: 1.5em;
-			margin: 1em 0;
-		}
-
-		.Track-artist {
-			width: 80%;
-			margin: auto;
-		}
-	}
-}
-
-.Paging {
-	text-align: center;
-	margin: 1em 0;
-}
