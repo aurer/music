@@ -1,0 +1,39 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	font-family: $font-primary;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	line-height: 1.5;
+	background-color: $color-neutral;
+	color: $color-white;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+[hidden],
+template {
+	display: none;
+}

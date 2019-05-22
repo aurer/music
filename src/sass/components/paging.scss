@@ -1,0 +1,16 @@
+.Paging {
+	position: sticky;
+	top: 0;
+	background-color: $color-neutral-darker;
+	color: $color-white;
+	top: 0;
+	text-align: center;
+	padding: $space-sm $space;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	.Paging-prev {
+		order: -1;
+	}
+}

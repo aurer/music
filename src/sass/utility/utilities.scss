@@ -1,0 +1,58 @@
+// Push
+@mixin push($a, $b) {
+	@if $a < $b {
+		position: relative;
+		left: ($a / $b) * 100%;
+	}
+}
+
+// Pull
+@mixin pull($a, $b) {
+	@if $a < $b {
+		position: relative;
+		left: -($a / $b) * 100%;;  
+	}
+}
+
+// Hide only visually, but have it available for screen readers:
+.u-visuallyHidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+
+	// Extends the .visuallyhidden class to allow the element
+	// to be focusable when navigated to via the keyboard:
+	&.focusable {
+		&:active, &:focus {
+			clip: auto;
+			height: auto;
+			margin: 0;
+			overflow: visible;
+			position: static;
+			width: auto;
+		}
+	}
+}
+
+// Simple floats
+.u-left {
+	float: left;
+}
+
+.u-right {
+	float: right;
+}
+
+// Clearfix: contain floats
+.u-clearFix {
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+}

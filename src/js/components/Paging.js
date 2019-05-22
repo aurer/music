@@ -30,14 +30,10 @@ class Paging extends Component {
 	render({ page, total, perPage, totalPages }) {
 		return (
 			<div class="Paging">
-				<div class="Paging-info">
-					{/* Page {page} of {totalPages} */}
-					<button onClick={this.handleRefresh.bind(this)}>Refresh</button>
-				</div>
-				<div class="Paging-controls">
-					<button class="Paging-prev" onClick={this.handlePrev.bind(this)} disabled={!this.hasPrev()}>prev</button>
-					<button class="Paging-next" onClick={this.handleNext.bind(this)} disabled={!this.hasNext()}>next</button>
-				</div>
+				{/* Page {page} of {totalPages} */}
+				<button class="Button" onClick={this.handleRefresh.bind(this)}>Refresh</button>
+				<button class="Button Paging-prev" onClick={this.handlePrev.bind(this)} disabled={!this.hasPrev()}>prev</button>
+				<button class="Button Paging-next" onClick={this.handleNext.bind(this)} disabled={!this.hasNext()}>next</button>
 			</div>
 		);
 	}

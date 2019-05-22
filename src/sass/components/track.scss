@@ -1,0 +1,93 @@
+.Tracks {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	grid-gap: 1rem 1rem;
+	padding: $space-sm;
+
+	@include bp(md) {
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-gap: 2rem;
+		padding: $space;
+	}
+
+	@include bp(lg) {
+		grid-gap: 4rem;
+	}
+}
+
+.Track {
+	display: grid;
+	grid-template-rows: auto 5rem;
+	grid-row-gap: .8rem;
+	justify-content: center;
+	
+	&-image {
+		img {
+			display:block;
+			max-width: 100%;
+			margin: auto;
+			box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+		}	
+	}
+	
+	&-info {
+		max-width: 300px;
+		font-size: .9rem;
+	}
+	
+	&-title {
+		font-size: 1em;
+		margin: 0 0 .5rem;
+	}
+	
+	&-artist {
+		margin: 0 0 .3rem;
+	}
+
+	&-date {
+		opacity: .5;
+	}
+}
+
+.Track--placeholder {
+	display: block;
+
+	.Track-image,
+	.Track-title,
+	.Track-artist {
+		background-color: #eee;
+	}
+
+	.Track-image {
+		margin-bottom: 1rem;
+
+		&:after {
+			content: '';
+			display: block;
+			width: 100%;
+			max-width: 300px;
+			height: 0;
+			padding-top: 100%;
+		}
+	}
+
+	.Track-info {
+		height: 6rem;
+	}
+
+	.Track-title {
+		&:after {
+			content: '';
+			display: inline-block;
+		}
+	}
+
+	.Track-artist {
+		width: 80%;
+
+		&:after {
+			content: '';
+			display: inline-block;
+		}
+	}
+}

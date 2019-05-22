@@ -1,0 +1,45 @@
+// Breakpoint mixin
+
+@mixin bp($size, $minmax:"min", $size2:false) {
+	$point: false;
+	$point2: "";
+	
+	// Find a valid size definition
+	@each $key, $value in $widths {
+		@if $size == $key {
+			$point: "(#{$minmax}-width: #{$value})";
+		}
+	}
+	
+	// Add second parameter if set
+	@if $size2 {
+		// Reverse the initial param for the second
+		$minmax2: "max";
+		@if $minmax == "max" { 
+			$minmax2: "min" 
+		}
+		
+		// Find valid size definition
+		@each $key2, $value2 in $widths {
+			@if $size2 == $key2 {
+				$point2: " and (#{$minmax2}-width: #{$value2})";
+			}
+		}
+	}
+	
+	@if $point {
+		@media #{$point}#{$point2} {
+			@content
+		}
+	}
+}
+
+// Get a defined width;
+@function  width($width) {
+	@return map-get($widths, $width);
+}
+
+// Get a defined width;
+@function  w($width) {
+	@return width($width);
+}
