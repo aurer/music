@@ -6,24 +6,29 @@ class Track extends Component {
 			name: track.name,
 			artist: track.artist['#text'],
 			album: track.album['#text'],
-			image: this.findImage(track.image)
+			image: this.findImage(track.image),
+			date: moment.unix(track.date.uts)
 		};
 	}
 
 	findImage(trackImages) {
 		let image = trackImages.reverse().find(image => image['#text'] != '');
-		return image ? image['#text'] : 'https://unsplash.it/300/300';
+		return image
+			? image['#text']
+			: 'data:image/svg+xml;<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><rect fill="#333" x="0" y="0" width="300" height="300" /></svg>';
 	}
 
 	render(props) {
 		let track = this.remapTrack(props.track);
 		return (
-			<div class="Track-container">
-				<div class="Track">
-					<div class="Track-image" />
-					{/* <img class="Track-image" src={track.image} /> */}
-					<h2 class="Track-name">{track.name}</h2>
-					<div class="Track-artist">{track.artist}</div>
+			<div class="Track">
+				<div class="Track-image">
+					<img src={track.image} width="300" height="300" />
+				</div>
+				<div class="Track-info">
+					<h2 class="Track-title">{track.name}</h2>
+					<p class="Track-artist">{track.artist}</p>
+					<small class="Track-date">{track.date.fromNow()}</small>
 				</div>
 			</div>
 		);

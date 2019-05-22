@@ -9,55 +9,140 @@ body {
 	box-sizing: border-box;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 .Tracks {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	grid-gap: 1px;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	grid-gap: 1rem 1rem;
+	padding: 1rem;
 
-	.Track-container {
-		box-shadow: 0 0 0 1px #ccc;
+	@media (min-width: 800px) {
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-gap: 2rem;
 	}
 
-	.Track {
-		padding: 1rem;
-		text-align: center;
+	@media (min-width: 1200px) {
+		grid-gap: 4rem;
+	}
+}
+
+.Track {
+	display: grid;
+	grid-template-rows: auto 5rem;
+	grid-row-gap: .8rem;
+	justify-content: center;
+	
+	&-image {
+		img {
+			display:block;
+			max-width: 100%;
+			margin: auto;
+			box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+		}	
+	}
+	
+	&-info {
 		max-width: 300px;
-		margin: auto;
-
-		&-image {
-			background-color: #eee;
-		}
+		font-size: .9rem;
+	}
+	
+	&-title {
+		font-size: 1em;
+		margin: 0 0 .5rem;
+	}
+	
+	&-artist {
+		margin: 0 0 .3rem;
 	}
 
-	.Track--placeholder {
-		.Track-image,
-		.Track-name,
-		.Track-artist {
-			background-color: #eee;
-			height: 1em;
-		}
+	&-date {
+		opacity: .5;
+	}
+}
 
-		.Track-image {
-			display: inline-block;
+.Track--placeholder {
+	display: block;
+
+	.Track-image,
+	.Track-title,
+	.Track-artist {
+		background-color: #eee;
+	}
+
+	.Track-image {
+		margin-bottom: 1rem;
+
+		&:after {
+			content: '';
+			display: block;
 			width: 100%;
 			max-width: 300px;
 			height: 0;
 			padding-top: 100%;
 		}
+	}
 
-		.Track-name {
-			font-size: 1.5em;
-			margin: 1em 0;
+	.Track-info {
+		height: 6rem;
+	}
+
+	.Track-title {
+		&:after {
+			content: '';
+			display: inline-block;
 		}
+	}
 
-		.Track-artist {
-			width: 80%;
-			margin: auto;
+	.Track-artist {
+		width: 80%;
+
+		&:after {
+			content: '';
+			display: inline-block;
 		}
 	}
 }
 
 .Paging {
+	position: sticky;
+	top: 0;
+	background-color: #222;
+	color: #fff;
+	top: 0;
 	text-align: center;
-	margin: 1em 0;
+	padding: .3rem;
+
+	&-prev,
+	&-next {
+		position: absolute;
+		top: .3rem;
+	}
+
+	&-prev {
+		left: 1rem;
+	}
+
+	&-next {
+		position: absolute;
+		right: 1rem;
+	}
+}
+
+button {
+	border: none;
+	background-color: #eee;
+	color: #222;
+	border-radius: .3rem;
+	text-transform: uppercase;
+	font-size: .75em;
+	padding: .3rem 1rem;
+	font-weight: bold;
+
+	&[disabled] {
+		opacity: 0.5;
+	}
 }

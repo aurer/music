@@ -31,15 +31,13 @@ class Paging extends Component {
 		return (
 			<div class="Paging">
 				<div class="Paging-info">
-					Page {page} of {totalPages}
-				</div>
-				<p>
-					{this.hasPrev() && <button onClick={this.handlePrev.bind(this)}>prev</button>}
-					{this.hasNext() && <button onClick={this.handleNext.bind(this)}>next</button>}
-				</p>
-				<p>
+					{/* Page {page} of {totalPages} */}
 					<button onClick={this.handleRefresh.bind(this)}>Refresh</button>
-				</p>
+				</div>
+				<div class="Paging-controls">
+					<button class="Paging-prev" onClick={this.handlePrev.bind(this)} disabled={!this.hasPrev()}>prev</button>
+					<button class="Paging-next" onClick={this.handleNext.bind(this)} disabled={!this.hasNext()}>next</button>
+				</div>
 			</div>
 		);
 	}
