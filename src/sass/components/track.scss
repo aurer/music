@@ -55,11 +55,12 @@
 	.Track-image,
 	.Track-title,
 	.Track-artist {
-		background-color: #eee;
+		background-color: rgba(#000, .3);
 	}
 
 	.Track-image {
 		margin-bottom: 1rem;
+		background-color: rgba(#000, .3);
 
 		&:after {
 			content: '';

@@ -7,8 +7,22 @@ class Track extends Component {
 			artist: track.artist['#text'],
 			album: track.album['#text'],
 			image: this.findImage(track.image),
-			date: moment.unix(track.date.uts)
+			time: this.trackTime(track)
 		};
+	}
+
+	trackTime(track) {
+		let time = 'a while ago';
+
+		if (track['@attr'] && track['@attr'].nowplaying) {
+			time = 'now';
+		}
+
+		if (track.date) {
+			time = moment.unix(track.date.uts).fromNow();
+		}
+
+		return time;
 	}
 
 	findImage(trackImages) {
@@ -30,7 +44,7 @@ class Track extends Component {
 				<div class="Track-info">
 					<h2 class="Track-title">{track.name}</h2>
 					<p class="Track-artist">{track.artist}</p>
-					<small class="Track-date">{track.date.fromNow()}</small>
+					<small class="Track-date">{track.time}</small>
 				</div>
 			</div>
 		);
