@@ -1,4 +1,5 @@
 const { h, Component } = preact;
+import { ArrowLeft, ArrowRight, Refresh } from './Icons.js';
 
 class Paging extends Component {
 	handlePrev() {
@@ -31,9 +32,25 @@ class Paging extends Component {
 		return (
 			<div class="Paging">
 				{/* Page {page} of {totalPages} */}
-				<button class="Button" onClick={this.handleRefresh.bind(this)}>Refresh</button>
-				<button class="Button Paging-prev" onClick={this.handlePrev.bind(this)} disabled={!this.hasPrev()}>prev</button>
-				<button class="Button Paging-next" onClick={this.handleNext.bind(this)} disabled={!this.hasNext()}>next</button>
+				<button class="Button" onClick={this.handleRefresh.bind(this)} title="Refresh">
+					<Refresh />
+				</button>
+				<button
+					title="Newer"
+					class="Button Paging-prev"
+					onClick={this.handlePrev.bind(this)}
+					disabled={!this.hasPrev()}
+				>
+					<ArrowLeft />
+				</button>
+				<button
+					title="Older"
+					class="Button Paging-next"
+					onClick={this.handleNext.bind(this)}
+					disabled={!this.hasNext()}
+				>
+					<ArrowRight />
+				</button>
 			</div>
 		);
 	}

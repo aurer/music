@@ -36,9 +36,12 @@ class Track extends Component {
 		let track = this.remapTrack(props.track);
 		let style = { backgroundImage: 'url(' + track.image + ')' };
 		let searchUri = `spotify:search:${track.artist}%20${track.name}`;
+		let styles = {
+			backgroundImage: 'url(' + track.image + ')'
+		};
 		return (
 			<div class="Track">
-				<div class="Track-image">
+				<div class="Track-image" style={styles}>
 					<img src={track.image} width="300" height="300" />
 				</div>
 				<div class="Track-info">

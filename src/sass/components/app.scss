@@ -1,3 +1,14 @@
 .App {
-	
+	height: 100vh;
+	display: grid;
+	overflow: auto;
+
+	.Paging {
+		order: 1;
+	}
+
+	.Tracks {
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+	}
 }

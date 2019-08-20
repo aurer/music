@@ -1,14 +1,15 @@
 .Paging {
-	position: sticky;
-	top: 0;
-	background-color: $color-neutral-darker;
-	color: $color-white;
-	top: 0;
 	text-align: center;
 	padding: $space-sm $space;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	border-top: 1px solid $color-neutral-lighter;
+
+	.Button {
+		padding-top: $space-xs;
+		padding-bottom: $space-xs;
+	}
 
 	.Paging-prev {
 		order: -1;
