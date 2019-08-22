@@ -6,7 +6,8 @@
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"start": "gulp"
+		"start": "gulp",
+		"deploy": "aws s3 cp build s3://music.aurer.co/build --recursive && aws s3 cp index.html s3://music.aurer.co"
 	},
 	"dependencies": {
 		"@babel/core": "^7.4.0",

@@ -4,7 +4,8 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	border-top: 1px solid $color-neutral-lighter;
+	border-bottom: 1px solid $color-neutral-lighter;
+	background-color: $color-neutral;
 
 	.Button {
 		padding-top: $space-xs;
