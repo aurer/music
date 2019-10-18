@@ -1,4 +1,4 @@
-const { h, Component } = preact;
+import { h, Component}  from '../lib/preact.js';
 import { ArrowLeft, ArrowRight, Refresh } from './Icons.js';
 
 class Paging extends Component {

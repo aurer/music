@@ -1,4 +1,4 @@
-const { h, Component } = preact;
+import { h, Component }  from '../lib/preact.js';
 
 class Track extends Component {
 	render(props) {

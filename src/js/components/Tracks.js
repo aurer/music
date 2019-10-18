@@ -1,4 +1,4 @@
-const { h, Component } = preact;
+import { h, Component }  from '../lib/preact.js';
 import Track from './Track.js';
 import TrackPlaceholder from './TrackPlaceholder.js';
 

@@ -1,4 +1,4 @@
-const { h, Component } = preact;
+import { h, render, Component }  from '../lib/preact.js';
 import Tracks from './Tracks.js';
 import Paging from './Paging.js';
 import Scrobbler from '../services/scrobbler.js';

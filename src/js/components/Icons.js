@@ -1,4 +1,4 @@
-const { h } = preact;
+import { h }  from '../lib/preact.js';
 
 export const ArrowLeft = () => {
 	return (
