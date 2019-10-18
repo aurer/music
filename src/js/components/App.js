@@ -47,7 +47,9 @@ class App extends Component {
 		return (
 			<div class="App">
 				<Paging page={page} totalPages={totalPages} onPage={this.handlePaging.bind(this)} />
-				<Tracks tracks={tracks.slice(0, this.state.perPage)} page={page} />
+				<main class="App-main">
+					<Tracks tracks={tracks.slice(0, this.state.perPage)} page={page} />
+				</main>
 			</div>
 		);
 	}
