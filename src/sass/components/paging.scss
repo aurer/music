@@ -1,18 +1,30 @@
 .Paging {
 	text-align: center;
 	padding: $space-sm $space;
-	display: flex;
+	display: inline-flex;
 	flex-direction: row;
-	justify-content: space-between;
-	border-bottom: 1px solid $color-neutral-lighter;
-	background-color: $color-neutral;
+	justify-content: center;
 
 	.Button {
 		padding-top: $space-xs;
 		padding-bottom: $space-xs;
+		margin: 0 $space-xs;
 	}
 
 	.Paging-prev {
 		order: -1;
+	}
+
+	@include bp(md, max) {
+		padding: $space-xs 0 $space-xs $space-sm;
+
+		.Button {
+			margin: 0;
+			padding: .5rem;
+		}
+
+		.Paging-refresh {
+			margin: 0 .3rem;
+		}
 	}
 }

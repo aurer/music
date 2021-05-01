@@ -22,7 +22,7 @@ class Scrobbler {
 			method: 'user.getrecenttracks',
 			limit: limit,
 			page: page
-		});
+		})
 	}
 
 	fetch(params) {

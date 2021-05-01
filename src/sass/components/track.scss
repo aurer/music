@@ -1,7 +1,7 @@
 .Tracks {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-	grid-gap: 1rem 1rem;
+	grid-gap: .5rem;
 	padding: $space-sm;
 
 	@include bp(md) {
@@ -64,6 +64,7 @@
 
 	&-date {
 		opacity: 0.5;
+		font-size: .8em;
 	}
 
 	&-search {
@@ -96,6 +97,25 @@
 				opacity: 1;
 				filter: grayscale(0);
 			}
+		}
+	}
+
+	@include bp(sm, max) {
+		display: flex;
+		justify-content: flex-start;
+
+		&-image {
+			width: 3rem;
+			height: 3rem;
+			padding: 0;
+			margin-right: $space-sm;
+			margin-bottom: 0;
+		}
+
+		&-title,
+		&-artist {
+			margin-bottom: 0;
+			font-size: .9em;
 		}
 	}
 }

@@ -1,7 +1,64 @@
 .App {
-	.Paging {
-		position: sticky;
-		top: 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+
+	main {
+		flex: 1;
+		overflow: auto;
+	}
+
+	footer {
+		border-top: 1px solid $color-neutral-lighter;
+		background-color: $color-neutral-light;
+		padding: $space-xs $space-sm;
+		display: grid;
+		grid-template-columns: auto 1fr;
+
+		@include bp(md) {
+			padding: $space-sm;
+			grid-template-columns: 15rem auto;
+		}
+
+		@include bp(lg) {
+			grid-template-columns: 30vw auto 30vw;
+		}
+
+		.App-nowPlaying {
+			.Track {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-start;
+
+				&-image {
+					width: 50px;
+					height: 50px;
+					padding-top: 0;
+					margin-bottom: 0;
+					margin-right: $space-sm;
+				}
+
+				&-title,
+				&-artist {
+					margin-bottom: 0;
+				}
+
+				&-date {
+					display: none;
+				}
+
+				@include bp(md, max) {
+					font-size: .8em;
+
+					&-image {
+						flex-basis: 40px;
+						width: 40px;
+						height: 40px;
+					}
+				}
+			}
+		}
 	}
 }
 

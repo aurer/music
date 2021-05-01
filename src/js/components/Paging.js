@@ -32,7 +32,7 @@ class Paging extends Component {
 		return (
 			<div class="Paging">
 				{/* Page {page} of {totalPages} */}
-				<button class="Button" onClick={this.handleRefresh.bind(this)} title="Refresh">
+				<button class="Button Paging-refresh" onClick={this.handleRefresh.bind(this)} title="Refresh">
 					<Refresh />
 				</button>
 				<button

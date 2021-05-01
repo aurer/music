@@ -9,7 +9,10 @@ function js() {
 		.pipe(plumber())
 		.pipe(
 			babel({
-				plugins: [['@babel/plugin-transform-react-jsx', { pragma: 'h' }]]
+				plugins: [
+					['@babel/plugin-transform-react-jsx', { pragma: 'h' }],
+					'@babel/plugin-proposal-optional-chaining'
+				]
 			})
 		)
 		.pipe(dest('build/js', { sourcemaps: true }))
