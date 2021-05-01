@@ -48,6 +48,12 @@
 					display: none;
 				}
 
+				&-link {
+					svg {
+						width: 30px;
+					}
+				}
+
 				@include bp(md, max) {
 					font-size: .8em;
 

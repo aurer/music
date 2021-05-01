@@ -67,36 +67,40 @@
 		font-size: .8em;
 	}
 
-	&-search {
+	&-links {
 		position: absolute;
-		top: 10%;
-		opacity: 0;
-		transform: translateY(-60%);
-		filter: grayscale(1) brightness(4);
-		transition: all 0.2s;
+		top: 0;
+		left: 0;
+		right: 0;
+		padding-top: 100%;
+		background-color: rgba($color-black, .95);
 
-		&--spotify {
-			left: 15%;
+		@include bp(sm, max) {
+			padding-top: 0;
+			bottom: 0;
 		}
 
-		&--youtube {
-			right: 15%;
+		&[aria-hidden="true"] {
+			display: none;
+		}
+
+		&[aria-hidden="false"] {
+			display: block;
 		}
 	}
 
-	&:hover {
-		.Track-image:after {
-			opacity: 1;
+	&-link {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: all 0.2s;
+
+		&--spotify {
+			left: 20%;
 		}
 
-		.Track-search {
-			transform: translateY(0);
-			opacity: 0.8;
-
-			&:hover {
-				opacity: 1;
-				filter: grayscale(0);
-			}
+		&--youtube {
+			right: 20%;
 		}
 	}
 
